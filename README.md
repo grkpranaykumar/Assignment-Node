@@ -54,19 +54,15 @@ npm run test
   "axios": "^0.14.0",
   "babel-cli": "^6.11.4",
   "body-parser": "1.15.2",
-  "censoring": "1.0.1",
   "cors": "2.8.0",
-  "csrf": "^3.0.4",
   "csurf": "^1.9.0",
   "email-templates": "2.5.2",
   "express": "4.14.0",
   "express-session": "1.14.1",
   "helmet": "^3.4.0",
   "lodash": "4.15.0",
-  "marked": "0.3.6",
   "mocha": "^3.2.0",
   "nodemon": "^1.11.0",
-  "request-ip": "1.2.2",
   "superagent": "^3.4.4",
   "superagent-promise": "^1.1.0",
   "supertest": "^3.0.0",
@@ -76,7 +72,8 @@ npm run test
 ```
 ## Code Documentation
  - The Node.js App docs is available in apidoc Dir
-### Assumptions and Challenges
+ 
+ ## Assumptions and Challenges
  - Provided API requires Lat/Lan only
  - Google API is used to get Lat/Lan for location
  - weather API is returning week data from index monday to sunday Next week
