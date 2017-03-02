@@ -5,13 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": " mocha 'test/**/*.js' --timeout 10000  --compilers js:babel-core/register",
-    "test:options": "mocha",
     "lint": "jshint --exclude ./node_modules/*.js *.js **/*.js",
     "deploy": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "start": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "prestart": "npm run test",
+    "test:watch": "npm t -- -w",
     "docs": "apidoc -i app/ -o apidoc/",
-    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover ./node_modules/.bin/_mocha 'test/**/*.js' -- --timeout 10000"
+    "check-coverage": "istanbul check-coverage --statements 70 --branches 70 --functions 70 --lines 70",
+    "coverage": "istanbul cover -x *.Spec.js _mocha -- -R spec test/**/*.js --timeout 10000 --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",

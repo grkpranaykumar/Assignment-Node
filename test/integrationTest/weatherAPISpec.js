@@ -8,7 +8,6 @@
 
  describe('API test to fecth weather Data', () => {
 
-
      it('Test case for API route /weather', function(done) {
          request(server)
              .get('/weather')
