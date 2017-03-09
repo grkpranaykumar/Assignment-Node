@@ -39,7 +39,7 @@ describe('Test for Weather  API response', () => {
                 res.should.have.status(200);
                 res.body.should.have.property('code');
                 res.body.should.have.property('message');
-
+                res.body.should.have.property('weatherData');
                 done();
             });
     });
@@ -52,7 +52,7 @@ describe('Test for Weather  API response', () => {
                 res.should.have.status(200);
                 res.body.should.have.property('code');
                 res.body.should.have.property('message');
-
+                res.body.should.have.property('weatherData');
                 done();
             });
     });
@@ -69,7 +69,16 @@ describe('Test for Weather  API response', () => {
                 done();
             });
     });
-
-
-
+    it('it should get weather Data object for delhi/sunday', (done) => {
+        chai.request(server)
+            .get('/weather/delhi/sunday')
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('code');
+                res.body.should.have.property('message');
+                res.body.should.be.a('object');
+                res.body.should.have.property('weatherData');
+                done();
+            });
+    });
 });

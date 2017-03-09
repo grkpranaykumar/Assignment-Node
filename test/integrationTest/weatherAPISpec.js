@@ -43,12 +43,24 @@
      });
 
      it('Test case for API route /weather/delhi/monday', function(done) {
-
          request(server)
              .get('/weather/delhi/monday')
              .set('Accept', 'application/json')
              .expect('Content-Type', /json/)
              .expect(200, done);
-
+     });
+     it('Test case for API route /weather/delhi/friday', function(done) {
+         request(server)
+             .get('/weather/delhi/friday')
+             .set('Accept', 'application/json')
+             .expect('Content-Type', /json/)
+             .expect(200, done);
+     });
+     it('Test case for API route /weather/delhi/tuesday', function(done) {
+         request(server)
+             .get('/weather/delhi/tuesday')
+             .set('Accept', 'application/json')
+             .expect('Content-Type', /json/)
+             .expect(200, done);
      });
  });
