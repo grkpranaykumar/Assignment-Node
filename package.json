@@ -9,14 +9,13 @@
     "deploy": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "start": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "prestart": "npm run test",
+    "coverage": "babel-node node_modules/.bin/babel-istanbul cover _mocha -- -R spec test/**/*.js --timeout 10000 --compilers js:babel-core/register",
     "test:watch": "npm t -- -w",
-    "docs": "apidoc -i app/ -o apidoc/",
-    "check-coverage": "istanbul check-coverage --statements 70 --branches 70 --functions 70 --lines 70",
-    "coverage": "istanbul cover -x *.Spec.js _mocha -- -R spec test/**/*.js --timeout 10000 --compilers js:babel-core/register"
+    "docs": "apidoc -i app/ -o apidoc/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tkssharma/codenotongit.git"
+    "url": "https://github.com/tkssharma/Assignment-Node.git"
   },
   "author": "@kssharma",
   "license": "MIT",
@@ -44,6 +43,7 @@
     "app-module-path": "1.1.0",
     "axios": "^0.14.0",
     "babel-cli": "^6.11.4",
+    "babel-istanbul": "^0.12.2",
     "bluebird": "^3.4.7",
     "body-parser": "1.15.2",
     "cors": "2.8.0",
