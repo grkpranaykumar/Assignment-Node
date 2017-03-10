@@ -72,8 +72,17 @@ npm run test
 ```
 ## Code Documentation
  - The Node.js App docs is available in apidoc Dir
- 
+
  ## Assumptions and Challenges
  - Provided API requires Lat/Lan only
  - Google API is used to get Lat/Lan for location
  - weather API is returning week data from index monday to sunday Next week
+
+## Test coverage Report
+
+=============================== Coverage summary ===============================
+Statements   : 85.71% ( 180/210 )
+Branches     : 78.59% ( 78/99 )
+Functions    : 76.67% ( 40/51 )
+Lines        : 86.12% ( 180/209 )
+================================================================================
