@@ -16,6 +16,7 @@ let weatherController = {
      * @param {function} returns callback
      * @returns {function} returns callback once weatherData is received from API
      */
+       /* istanbul ignore next */
     fetch: (callback) => {
         winston.log('info', 'Running inside Controlller')
         return weatherController.apiRequest('')
@@ -33,6 +34,7 @@ let weatherController = {
      * @param {String} city name to fetch Weather data
      * @returns {function} returns callback once weatherData is received from API
      */
+       /* istanbul ignore next */
     fetchByCity: (city, callback) => {
         return weatherController.googleApiRequest(city)
             .then((response) => {
@@ -55,6 +57,7 @@ let weatherController = {
      * @param {String} day  name to fetch Weather data based on weekday
      * @returns {function} returns callback once weatherData is received from API
      */
+       /* istanbul ignore next */
     fetchByCityAndDay: (city, day, callback) => {
         if (day === 'today') {
             return weatherController.googleApiRequest(city)
@@ -102,9 +105,9 @@ let weatherController = {
         return axios.get(Util.buildGoogleApiUrl(location))
     },
     /** @extractLatLong
-     * This function is being used to return lat/lan 
+     * This function is being used to return lat/lan
      * @param {String}  response
-     * @returns {String} returns String 
+     * @returns {String} returns String
      */
     extractLatLong: (response) => {
 

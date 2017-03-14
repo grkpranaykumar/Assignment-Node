@@ -3,9 +3,10 @@
 import ResponseTemplate from 'app/global/templates/response';
 /** @Middleware
  * This function is being used to check for API calls to vaidate weekday
- * @param {req,res,next} 
+ * @param {req,res,next}
  * @returns {error,next()}  return response or forward api call to next Middleware
  */
+   /* istanbul ignore next */
 let validateWeekDay = (req, res, next) => {
 
     let weekdays = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday', 'today']
