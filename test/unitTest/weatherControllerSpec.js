@@ -120,3 +120,32 @@ describe('Test case for Weather API sending JSON object', function() {
         }, done);
     });
 })
+
+describe('Test case for Weather API/Google API Together Nested', function() {
+    it("Google API call to return json object to Weather API", function(done) {
+        var testPromise = new Promise(function(resolve, reject) {
+            // test with dummy location
+            weatherController.googleApiRequest('delhi').then(function(response) {
+                weatherController.apiRequest(weatherController.extractLatLong(response.data)).then(function(data) {
+                    resolve(data)
+                }, function(err) {
+                    reject(err)
+                })
+            }, function(err) {
+                reject(err)
+            })
+
+
+        });
+        testPromise.then(function(result) {
+            try {
+                expect(result).to.not.be.undefined;
+                expect(result.status).to.equal(200);
+
+                done();
+            } catch (err) {
+                done(err);
+            }
+        }, done);
+    });
+})
