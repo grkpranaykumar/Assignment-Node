@@ -102,7 +102,8 @@ describe('Test case for Weather API sending JSON object', function() {
     it("weather API call to return json object", function(done) {
         var testPromise = new Promise(function(resolve, reject) {
             // test with dummy location
-            weatherController.apiRequest('28.7040592,77.10249019999999').then(function(data) {
+            weatherController.apiRequest('28.7040592,77.10249019999999')
+                .then(function(data) {
                 resolve(data)
             }, function(err) {
                 reject(err)
@@ -112,7 +113,6 @@ describe('Test case for Weather API sending JSON object', function() {
             try {
                 expect(result).to.not.be.undefined;
                 expect(result.status).to.equal(200);
-
                 done();
             } catch (err) {
                 done(err);
@@ -120,6 +120,11 @@ describe('Test case for Weather API sending JSON object', function() {
         }, done);
     });
 })
+
+
+
+
+
 
 describe('Test case for Weather API/Google API Together Nested', function() {
     it("Google API call to return json object to Weather API", function(done) {
@@ -134,8 +139,6 @@ describe('Test case for Weather API/Google API Together Nested', function() {
             }, function(err) {
                 reject(err)
             })
-
-
         });
         testPromise.then(function(result) {
             try {

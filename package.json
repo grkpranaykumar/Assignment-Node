@@ -4,12 +4,12 @@
   "description": "node js assignment",
   "main": "server.js",
   "scripts": {
-    "test": " mocha 'test/**/*.js' --timeout 10000  --compilers js:babel-core/register",
+    "test": "mocha 'test/**/*.js' --timeout 10000  --compilers js:babel-core/register",
     "lint": "jshint --exclude ./node_modules/*.js *.js **/*.js",
     "deploy": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "start": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "prestart": "npm run test",
-    "coverage": "babel-node node_modules/.bin/babel-istanbul cover _mocha -- -R spec test/**/*.js --timeout 10000 --compilers js:babel-core/register",
+    "coverage": "babel-node node_modules/.bin/babel-istanbul  cover _mocha -- -R spec test/**/*.js --timeout 10000 --compilers js:babel-core/register",
     "test:watch": "npm t -- -w",
     "docs": "apidoc -i app/ -o apidoc/"
   },

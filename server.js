@@ -3,7 +3,6 @@
 import 'app-module-path/register';
 import { addPath } from 'app-module-path';
 addPath(__dirname);
-
 import config_server from 'app/global/config';
 import AppRoutes from 'app/routes';
 import AppMiddleware from 'app/middleware';
