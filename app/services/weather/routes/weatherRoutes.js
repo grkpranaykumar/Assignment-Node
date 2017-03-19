@@ -25,7 +25,9 @@ let router = express.Router();
  * @apiSuccess {String} code from response.
  * @apiSuccess {String} message from response.
  * @apiSuccess {object} weatherData fetched data of weather.
+ * /weather/
  */
+
 router.get('/', (req, res) => {
     weatherController.fetch(function(err, weatherData) {
         winston.log('info', 'Running inside Controlller')
@@ -48,11 +50,12 @@ router.get('/', (req, res) => {
  * @apiGroup Weather
  * @apiParam {String} location Location city area state.
  * @middleare validateLocation validate location
- * 
+ *
  * @apiSuccess {String} code from response.
  * @apiSuccess {String} message from response.
  * @apiSuccess {object} weatherData fetched data of weather.
  */
+ //app.use()
 router.get('/:location', validateLocation, (req, res) => {
     weatherController.fetchByCity(req.params.location, function(err, weatherData) {
         if (err) {
@@ -75,7 +78,7 @@ router.get('/:location', validateLocation, (req, res) => {
  * @apiParam {String} location Location city area state.
  * @apiParam {String} weekday   weekday including today {'monday'....'sunday','today'}.
  * @middleare validateLocation validateWeekday validate location & weekday
- * 
+ *
  * @apiSuccess {String} code from response.
  * @apiSuccess {String} message from response.
  * @apiSuccess {object} weatherData fetched data of weather.
