@@ -1,5 +1,4 @@
 'use strict';
-
 import 'app-module-path/register';
 import { addPath } from 'app-module-path';
 addPath(__dirname);
