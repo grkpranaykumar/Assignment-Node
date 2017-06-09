@@ -13,7 +13,7 @@ import winston from 'winston';
 winston.level = process.env.LOG_LEVEL || 'error'
 //winston.level = process.env.LOG_LEVEL || 'info'
 
-let app3 = express();
+let app4 = express();
 //---------------------------------------------//
 //@ invoke Middleware by passing express object
 //@ invoke routes and register to express instance
